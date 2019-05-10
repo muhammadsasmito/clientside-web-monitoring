@@ -1,0 +1,25 @@
+version: '2'
+
+services:
+  monitor:
+    image: web-monitor
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./:/usr/share/nginx/html:z
+    restart: always
+    links:
+      - php
+
+  php:
+    image: php:7-fpm
+    volumes:
+        - ./:/usr/share/nginx/html:z
+
+  edit-monitor:
+    image: codercom/code-server:1.621
+    command: --allow-http --no-auth
+    ports:
+      - "8443:8443"
+    volumes:
+      - ./:/home/coder/project:z

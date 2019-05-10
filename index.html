@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <link rel="shortcut icon" type="image/png" href="https://uptimerobot.com/assets/ico/favicon.ico">
+  <title>DPR Web Monitor</title>
+  <link rel="canonical" href="https://status.uptimerobot.com/">
+
+  <!-- Styles -->
+  <link href="assets/custom.css" rel="stylesheet">
+  <link href="assets/static.css" rel="stylesheet">
+
+  <!-- Code snippet to speed up Google Fonts rendering: googlefonts.3perf.com -->
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com/">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="anonymous">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700" as="fetch"
+    crossorigin="anonymous">
+  <script type="text/javascript">
+    !function (e, n, t) { "use strict"; var o = "https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700", r = "__3perf_googleFontsStylesheet"; function c(e) { (n.head || n.body).appendChild(e) } function a() { var e = n.createElement("link"); e.href = o, e.rel = "stylesheet", c(e) } function f(e) { if (!n.getElementById(r)) { var t = n.createElement("style"); t.id = r, c(t) } n.getElementById(r).innerHTML = e } e.FontFace && e.FontFace.prototype.hasOwnProperty("display") ? (t[r] && f(t[r]), fetch(o).then(function (e) { return e.text() }).then(function (e) { return e.replace(/@font-face {/g, "@font-face{font-display:swap;") }).then(function (e) { return t[r] = e }).then(f).catch(a)) : a() }(window, document, localStorage);
+  </script>
+
+</head>
+
+<body>
+  <div class="controller ng-scope" style="display: block;">
+    <div id="page-container">
+      <div id="overview">
+        <div class="wrapper cf">
+          <section class="one-third">
+            <div class="logo-wrapper" style="margin: auto;text-align: center;">
+            <img alt="DPR Web Monitor Status" class="logo" src="assets/724971-1556156288.png">
+            <h2>Monitoring Server DPR RI</h2>
+            </div>
+          </section>
+
+          <section id="latest-downtime" class="one-third">
+            <h2>Latest Downtime</h2>
+            <p>It was recorded for the monitor DPR Website on <span id="last-refresh"></span>.</p>
+          </section>
+
+          <section id="quick-stats" class="one-third">
+            <h2>Quick Stats</h2>
+            <ul class="stats">
+              <li class="cf">
+                <span class="bullet bullet-sm success-bg"></span>
+                <span class="success">Up</span>
+                <span class="success right" id="success-stats">0</span>
+              </li>
+              <li class="cf">
+                <span class="bullet bullet-sm danger-bg"></span>
+                <span class="danger fl">Down</span>
+                <span class="danger fr right" id="danger-stats">0</span>
+              </li>
+              <li class="cf">
+                <span class="bullet bullet-sm paused-bg"></span>
+                <span class="paused fl">Warning</span>
+                <span class="paused fr right" id="warning-stats">0</span>
+              </li>
+            </ul>
+          </section>
+        </div>
+      </div>
+      <section id="monitors">
+        <div class="wrapper">
+          <div class="seperator"></div>
+          <div class="monitor-table">
+            <table>
+              <thead>
+                <tr>
+                  <th class="padded">Status</th>
+                  <th class="padded">Url</th>
+                  <th class="padded">Deskripsi</th>
+                  <th class="padded">Port</th>
+                  <th class="padded">Curl</th>
+                </tr>
+              </thead>
+              <tbody class="monitor-data">
+                <tr>
+                  <td class="httpstatus"></td>
+                  <td class="type padded">www.dpr.go.id</td>
+                  <td class="name padded flex-parent"><a title="Website DPR RI" class="long-and-truncated"
+                      href="www.dpr.go.id">Website DPR RI</a></td>
+                  <td class="type padded">www.0.10</td>
+                  <td class="type padded httpcode"></td>
+                </tr>
+                <tr>
+                  <td class="httpstatus"></td>
+                  <td class="type padded">dpr.go.id/serba-serbi/tv-parlemen</td>
+                  <td class="name padded flex-parent"><a title="Website TV Parlemen" class="long-and-truncated"
+                      href="dpr.go.id/serba-serbi/tv-parlemen">Website TV Parlemen</a></td>
+                  <td class="type padded">www.0.10</td>
+                  <td class="type padded httpcode"></td>
+                </tr>
+                <tr>
+                  <td class="httpstatus"></td>
+                  <td class="type padded">sms.dpr.go.id</td>
+                  <td class="name padded flex-parent"><a title="SMS GATEAWAY DPR RI" class="long-and-truncated"
+                      href="sms.dpr.go.id">SMS GATEWAY DPR RI</a></td>
+                  <td class="type padded">int04.96.17</td>
+                  <td class="type padded httpcode"></td>
+                </tr>
+                <tr>
+                  <td class="httpstatus"></td>
+                  <td class="type padded">smsaspirasi.dpr.go.id</td>
+                  <td class="name padded flex-parent"><a title="SMS Aspirasi DPR RI" class="long-and-truncated"
+                      href="smsaspirasi.dpr.go.id">SMS Aspirasi DPR RI</a></td>
+                  <td class="type padded">int06.96.14</td>
+                  <td class="type padded httpcode"></td>
+                </tr>
+                <tr>
+                  <td class="httpstatus"></td>
+                  <td class="type padded">mail.dpr.go.id</td>
+                  <td class="name padded flex-parent"><a title="Email DPR RI" class="long-and-truncated"
+                      href="mail.dpr.go.id">Email DPR RI</a></td>
+                  <td class="type padded">www.0.10</td>
+                  <td class="type padded httpcode"></td>
+                </tr>
+                <tr>
+                  <td class="httpstatus"></td>
+                  <td class="type padded">absensi.dpr.go.id</td>
+                  <td class="name padded flex-parent"><a title="Mesin Absen DPR RI" class="long-and-truncated"
+                      href="absensi.dpr.go.id">Mesin Absen DPR RI</a></td>
+                  <td class="type padded">int08.96.26</td>
+                  <td class="type padded httpcode"></td>
+                </tr>
+                <tr>
+                  <td class="httpstatus"></td>
+                  <td class="type padded">pengaduan.dpr.go.id</td>
+                  <td class="name padded flex-parent"><a title="Pengaduan Masyarakat" class="long-and-truncated"
+                      href="pengaduan.dpr.go.id">Pengaduan Masyarakat</a></td>
+                  <td class="type padded">ext02.0.21</td>
+                  <td class="type padded httpcode"></td>
+                </tr>
+                <tr>
+                  <td class="httpstatus"></td>
+                  <td class="type padded">perpustakaan.dpr.go.id</td>
+                  <td class="name padded flex-parent"><a title="Perpustakaan DPR RI" class="long-and-truncated"
+                      href="perpustakaan.dpr.go.id">Perpustakaan DPR RI</a></td>
+                  <td class="type padded">perpus.0.12</td>
+                  <td class="type padded httpcode"></td>
+                </tr>
+                <tr>
+                  <td class="httpstatus"></td>
+                  <td class="type padded">jurnal.dpr.go.id</td>
+                  <td class="name padded flex-parent"><a title="Jurnal DPR RI" class="long-and-truncated"
+                      href="jurnal.dpr.go.id">Jurnal DPR RI</a></td>
+                  <td class="type padded">ext03.0.26</td>
+                  <td class="type padded httpcode"></td>
+                </tr>
+                <tr>
+                  <td class="httpstatus"></td>
+                  <td class="type padded">ppid.dpr.go.id</td>
+                  <td class="name padded flex-parent"><a title="PPID DPR RI" class="long-and-truncated"
+                      href="ppid.dpr.go.id">PPID DPR RI</a></td>
+                  <td class="type padded">ext02.0.21</td>
+                  <td class="type padded httpcode"></td>
+                </tr>
+                <tr>
+                  <td class="httpstatus"></td>
+                  <td class="type padded">bk.dpr.go.id</td>
+                  <td class="name padded flex-parent"><a title="BK DPR RI" class="long-and-truncated"
+                      href="bk.dpr.go.id">BK DPR RI</a></td>
+                  <td class="type padded">ext04.0.27</td>
+                  <td class="type padded httpcode"></td>
+                </tr>
+                <tr>
+                  <td class="httpstatus"></td>
+                  <td class="type padded">ittama.dpr.go.id</td>
+                  <td class="name padded flex-parent"><a title="ITTAMA DPR RI" class="long-and-truncated"
+                      href="ittama.dpr.go.id">ITTAMA DPR RI</a></td>
+                  <td class="type padded">ext04.0.27</td>
+                  <td class="type padded httpcode"></td>
+                </tr>
+                <tr>
+                  <td class="httpstatus"></td>
+                  <td class="type padded">piket.dpr.go.id</td>
+                  <td class="name padded flex-parent"><a title="SMS GATEAWAY DPR RI" class="long-and-truncated"
+                      href="piket.dpr.go.id<">Piket DPR RI</a></td>
+                  <td class="type padded">ext01.0.20</td>
+                  <td class="type padded httpcode"></td>
+                </tr>
+                <tr>
+                  <td class="httpstatus"></td>
+                  <td class="type padded">portal.dpr.go.id</td>
+                  <td class="name padded flex-parent"><a title="Portal DPR RI" class="long-and-truncated"
+                      href="portal.dpr.go.id">Portal DPR RI</a></td>
+                  <td class="type padded">int03.30.11</td>
+                  <td class="type padded httpcode"></td>
+                </tr>
+                <tr>
+                  <td class="httpstatus"></td>
+                  <td class="type padded">persuratan.dpr.go.id</td>
+                  <td class="name padded flex-parent"><a title="Persuratan DPR RI" class="long-and-truncated"
+                      href="persuratan.dpr.go.id<">Persuratan DPR RI</a></td>
+                  <td class="type padded">int05.96.18</td>
+                  <td class="type padded httpcode"></td>
+                </tr>
+                <tr>
+                  <td class="httpstatus"></td>
+                  <td class="type padded">keuangan.dpr.go.id</td>
+                  <td class="name padded flex-parent"><a title="Keuangan DPR RI" class="long-and-truncated"
+                      href="keuangan.dpr.go.id">Keuangan DPR RI</a></td>
+                  <td class="type padded">int01.96.24</td>
+                  <td class="type padded httpcode"></td>
+                </tr>
+                <tr>
+                  <td class="httpstatus"></td>
+                  <td class="type padded">semar.dpr.go.id</td>
+                  <td class="name padded flex-parent"><a title="SEMAR DPR RI" class="long-and-truncated"
+                      href="semar.dpr.go.id">SEMAR DPR RI</a></td>
+                  <td class="type padded">int07.96.16</td>
+                  <td class="type padded httpcode"></td>
+                </tr>
+                <tr>
+                  <td class="httpstatus"></td>
+                  <td class="type padded">koperasi.dpr.go.id</td>
+                  <td class="name padded flex-parent"><a title="Koperasi DPR RI" class="long-and-truncated"
+                      href="koperasi.dpr.go.id">Koperasi DPR RI</a></td>
+                  <td class="type padded">int06.96.14</td>
+                  <td class="type padded httpcode"></td>
+                </tr>
+                <tr>
+                  <td class="httpstatus"></td>
+                  <td class="type padded">sitanang.dpr.go.id</td>
+                  <td class="name padded flex-parent"><a title="SITANANG DPR RI" class="long-and-truncated"
+                      href="sitanang.dpr.go.id">SITANANG DPR RI</a></td>
+                  <td class="type padded">int04.96.17</td>
+                  <td class="type padded httpcode"></td>
+                </tr>
+                <tr>
+                  <td class="httpstatus"></td>
+                  <td class="type padded">sileg.dpr.go.id</td>
+                  <td class="name padded flex-parent"><a title="SILEG DPR RI" class="long-and-truncated"
+                      href="sileg.dpr.go.id">SILEG DPR RI</a></td>
+                  <td class="type padded">int02.30.13</td>
+                  <td class="type padded httpcode"></td>
+                </tr>
+                <tr>
+                  <td class="httpstatus"></td>
+                  <td class="type padded">anggota.dpr.go.id</td>
+                  <td class="name padded flex-parent"><a title="Portal Anggota DPR RI" class="long-and-truncated"
+                      href="anggota.dpr.go.id">Portal Anggota DPR RI</a></td>
+                  <td class="type padded">int03.30.11</td>
+                  <td class="type padded httpcode"></td>
+                </tr>                
+              </tbody>
+            </table>
+          </div>
+
+          <div class="text-center"></div>
+
+        </div>
+      </section>
+
+    </div>
+
+    <footer id="main-footer">
+      <div class="wrapper">
+      </div>
+    </footer>
+    <script src="assets/jquery-3.js"></script>
+    <script src="assets/check.js"></script>
+  <div id="loader-overlay" class="fade-box" style="display: none;">
+    <div class="loader-container">
+      <div class="spinner">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
